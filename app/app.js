@@ -12,7 +12,7 @@ const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
 
 const mongoURL = process.env.NODE_ENV === 'production'
   ? MONGO_URL_PROD
-  : process.env.MONGO_URL_DEV;
+  : MONGO_URL_DEV;
 
 mongoose
   .connect(mongoURL, {
