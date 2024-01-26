@@ -7,9 +7,6 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
 
-
-app.use(express.static(path.join(__dirname, "build")));
-
 const { MONGO_URL, PORT } = process.env;
 
 mongoose
@@ -27,6 +24,7 @@ var authRouter = require('./routes/authRoute');
 
 
 var app = express();
+app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
     origin: "http://localhost:3000",
