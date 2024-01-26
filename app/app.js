@@ -6,6 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
+
 var authRouter = require('./routes/authRoute');
 
 const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
@@ -23,7 +24,7 @@ mongoose
   .catch((err) => console.error(err));
 
 
-// var indexRouter = require('./routes/index');
+
 
 
 
