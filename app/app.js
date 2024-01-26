@@ -6,7 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
-const path = require("path");
+
 
 app.use(express.static(path.join(__dirname, "build")));
 
