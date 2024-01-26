@@ -7,10 +7,14 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
 
-const { MONGO_URL, PORT } = process.env;
+const { MONGO_URL_URL, MONGO_URL_DEV, PORT } = process.env;
+
+const mongoURL = process.env.NODE_ENV === 'production'
+  ? process.env.MONGO_URL_PROD
+  : process.env.MONGO_URL_DEV;
 
 mongoose
-  .connect(MONGO_URL, {
+  .connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
