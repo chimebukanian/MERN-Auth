@@ -6,11 +6,12 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
+var authRouter = require('./routes/authRoute');
 
 const { MONGO_URL_URL, MONGO_URL_DEV, PORT } = process.env;
 
 const mongoURL = process.env.NODE_ENV === 'production'
-  ? process.env.MONGO_URL_PROD
+  ? MONGO_URL_PROD
   : process.env.MONGO_URL_DEV;
 
 mongoose
@@ -23,7 +24,7 @@ mongoose
 
 
 // var indexRouter = require('./routes/index');
-var authRouter = require('./routes/authRoute');
+
 
 
 
