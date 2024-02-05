@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 require("dotenv").config();
 
-var authRouter = require('./routes/authRoute');
+var authRouter = require('./routes/authRoute.js');
 
 const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
 
