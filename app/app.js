@@ -23,13 +23,11 @@ mongoose
   .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
 
-
-
-
-
-
-
 var app = express();
+
+app.use("/", authRouter);
+// app.use('/users', usersRouter);
+
 app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
@@ -48,9 +46,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use("/", authRouter);
-// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
