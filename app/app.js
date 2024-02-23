@@ -31,7 +31,7 @@ app.use("/", authRouter);
 app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     optionSuccessStatus:200
