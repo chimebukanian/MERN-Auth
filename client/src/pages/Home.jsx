@@ -16,7 +16,7 @@ const Home = () => {
       }
  
       const { data } = await axios.post(
-          'http://localhost:4000',
+          'https://ebukaauth.onrender.com/',
           {},
           { withCredentials: true }
       );
