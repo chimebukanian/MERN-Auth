@@ -1,6 +1,6 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Login, Signup} from "./pages";
-import Home from "./pages/Home";
+import qwHome from "./pages/Home";
 
 function App() {
   return (
