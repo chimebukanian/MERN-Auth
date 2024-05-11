@@ -10,7 +10,10 @@ require("dotenv").config();
 var authRouter = require('./routes/authRoute.js');
 var app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://chimebuka.onrender.com',
+  credentials: true // Allow credentials (cookies, authorization headers, etc.)
+}));
 const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
 
 const mongoURL = process.env.NODE_ENV === 'production'
