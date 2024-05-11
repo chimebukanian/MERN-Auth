@@ -24,11 +24,6 @@ mongoose
   .catch((err) => console.error(err));
 
 var app = express();
-
-app.use("/", authRouter);
-// app.use('/users', usersRouter);
-
-app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
     origin:'*', 
@@ -36,6 +31,11 @@ app.use(
     optionSuccessStatus:200
 })
 );
+app.use("/", authRouter);
+// app.use('/users', usersRouter);
+
+app.use(express.static(path.join(__dirname, "build")));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
