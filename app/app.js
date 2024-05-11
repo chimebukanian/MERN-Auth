@@ -8,7 +8,9 @@ const cors = require("cors");
 require("dotenv").config();
 
 var authRouter = require('./routes/authRoute.js');
+var app = express();
 
+app.use(cors());
 const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
 
 const mongoURL = process.env.NODE_ENV === 'production'
@@ -23,14 +25,7 @@ mongoose
   .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
 
-var app = express();
-app.use(
-  cors({
-    origin:'*', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-})
-);
+
 app.use("/", authRouter);
 // app.use('/users', usersRouter);
 
