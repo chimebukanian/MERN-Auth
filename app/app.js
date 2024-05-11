@@ -31,7 +31,7 @@ app.use("/", authRouter);
 app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
-    origin:'https://chimebuka.onrender.com', 
+    origin:'*', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 })
