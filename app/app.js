@@ -11,9 +11,14 @@ var authRouter = require('./routes/authRoute.js');
 var app = express();
 
 app.use(cors({
-  origin: 'https://chimebuka.onrender.com',
+  origin: 'https://chimebuka.onrender.com/',
   credentials: true // Allow credentials (cookies, authorization headers, etc.)
 }));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 const { MONGO_URL_PROD, MONGO_URL_DEV, PORT } = process.env;
 
 const mongoURL = process.env.NODE_ENV === 'production'
@@ -38,10 +43,7 @@ app.use(express.static(path.join(__dirname, "build")));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler

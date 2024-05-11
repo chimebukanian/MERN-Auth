@@ -16,7 +16,8 @@ const Home = () => {
       }
  
       const { data } = await axios.post(
-          'https://ebukaauth.onrender.com/',
+          // 'http://localhost:3000/'
+          "https://chimebuka.onrender.com/"",
           {},
           { withCredentials: true }
       );

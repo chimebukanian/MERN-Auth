@@ -33,8 +33,8 @@ const Signup = () => {
         e.preventDefault();
         try {
             const {data} = await axios.post(
-                // "http://localhost:4000/signup"
-                "https://ebukaauth.onrender.com/signup",
+                // "http://localhost:3000/signup"
+                "https://chimebuka.onrender.com/signup",
                 {
                     ...inputVal,
                 },

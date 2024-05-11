@@ -16,6 +16,7 @@ const Login = () => {
       ...inputValue,
       [name]: value,
     });
+    
   };
 
   const handleError = (err) =>
@@ -29,9 +30,11 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(inputValue)
     try {
       const { data } = await axios.post(
-        "https://ebukaauth.onrender.com/login",
+        // "http://localhost:3000/login"
+        "https://chimebuka.onrender.com/login",
         {
           ...inputValue,
         },
