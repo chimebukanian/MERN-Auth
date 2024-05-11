@@ -31,11 +31,10 @@ app.use("/", authRouter);
 app.use(express.static(path.join(__dirname, "build")));
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    origin:'https://chimebuka.onrender.com', 
+    credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
-  })
+})
 );
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
