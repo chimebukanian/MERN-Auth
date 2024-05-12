@@ -17,7 +17,7 @@ const Home = () => {
  
       const { data } = await axios.post(
           // 'http://localhost:3000/'
-          "https://chimebuka.onrender.com/"",
+          "https://chimebuka.onrender.com/",
           {},
           { withCredentials: true }
       );
