@@ -11,7 +11,7 @@ var authRouter = require('./routes/authRoute.js');
 var app = express();
 
 app.use(cors({
-  origin: 'https://chimebuka.onrender.com/',
+  origin: 'https://chimebuka.onrender.com',
   credentials: true // Allow credentials (cookies, authorization headers, etc.)
 }));
 app.use(logger('dev'));
