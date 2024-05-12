@@ -34,7 +34,7 @@ const Signup = () => {
         try {
             const {data} = await axios.post(
                 // "http://localhost:3000/signup"
-                "https://chimebuka.onrender.com/signup",
+                "https://ebukaauth.onrender.com/",
                 {
                     ...inputVal,
                 },
