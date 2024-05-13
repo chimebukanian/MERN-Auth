@@ -34,7 +34,7 @@ const Login = () => {
     try {
       const { data } = await axios.post(
         // "http://localhost:3000/login"
-        "https://ebukaauth.onrender.com/login",
+        "https://ebukaauth.onrender.com/login/",
         {
           ...inputValue,
         },
@@ -45,7 +45,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("https://ebukaauth.onrender.com");
+          navigate("/");
         }, 1000);
       } else {
         handleError(message);
