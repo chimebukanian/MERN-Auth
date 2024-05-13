@@ -45,7 +45,7 @@ const Signup = () => {
             if (success){
                 handleSucceess(message);
                 setTimeout(()=>{
-                    navigate("https://chimebuka.onrender.com/");
+                    navigate("https://ebukaauth.onrender.com");
                 }, 1000);
             }else{
                 handleError(message);
