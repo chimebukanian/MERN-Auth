@@ -32,15 +32,13 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const {data} = await axios.post(
-                // "http://localhost:3000/signup"
-                "https://ebukaauth.onrender.com/signup/",
+            const { data } = await axios.post(
+                'https://ebukaauth.onrender.com/signup',
                 {
-                    ...inputVal,
+                  ...inputVal,
                 },
                 { withCredentials: true }
-            )
-            
+              );
             const {success, message }= data;
             if (success){
                 handleSucceess(message);

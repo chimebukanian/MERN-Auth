@@ -13,13 +13,13 @@ const Home = () => {
     const verifyCookie = async () => {
       if(!cookies.token){
         navigate("/login");
+        return;
       }
  
       const { data } = await axios.post(
-          // 'http://localhost:3000/'
-          "https://ebukaauth.onrender.com/",
-          {},
-          { withCredentials: true }
+        'https://ebukaauth.onrender.com/',
+        {},
+        { withCredentials: true }
       );
       const {status, user} = data;
       setUsername(user);
